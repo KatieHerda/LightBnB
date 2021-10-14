@@ -126,6 +126,7 @@ const getAllProperties = (options, limit = 10) => {
   //to check if we have a WHERE statement before adding one.
   let counter = 0;
 
+  // // HAVING
   if (options.city) {
     queryParams.push(`%${options.city}%`);
     queryString += `WHERE city LIKE $${queryParams.length}`;
@@ -165,22 +166,23 @@ const getAllProperties = (options, limit = 10) => {
     }
   }
 
-  //if minimum_rating, only return properties with a rating equal to or higher than that.
-  if (options.minimum_rating) {
-    console.log(options);
-    queryParams.push(options.minimum_rating);
-    if (counter > 0) {
-      queryString += ` AND rating >= $${queryParams.length}`;
-    } else {
-      queryString += `WHERE rating >= $${queryParams.length}`;
-      counter++;
-    }
-  }
-
-  queryParams.push(limit);
+  // // GROUP BY
   queryString += `
   GROUP BY 
     properties.id
+  `
+
+  // // HAVING
+  //needs to be a HAVE statement to accept avg function
+  //if minimum_rating, only return properties with a rating equal to or higher than that.
+  if (options.minimum_rating) {
+    queryParams.push(options.minimum_rating);
+    queryString += `HAVING AVG(property_reviews.rating) >= $${queryParams.length}`;
+  }
+
+  // // ORDER BY & LIMIT
+  queryParams.push(limit);
+  queryString += `
   ORDER BY 
     cost_per_night
   LIMIT 
