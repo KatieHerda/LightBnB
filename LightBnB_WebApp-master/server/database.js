@@ -78,14 +78,8 @@ const getAllProperties = (options, limit = 10) => {
   return pool
   .query(`SELECT * FROM properties LIMIT $1`, [limit])
   .then ((result) => result.rows)
-    // console.log(result.rows) //prints the select statement
   .catch((err) => console.log('ERROR:', err.message)
   );
-  // const limitedProperties = {};
-  // for (let i = 1; i <= limit; i++) {
-  //   limitedProperties[i] = properties[i];
-  // }
-  // return Promise.resolve(limitedProperties);
 };
 exports.getAllProperties = getAllProperties;
 
