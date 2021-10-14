@@ -1,8 +1,8 @@
 INSERT INTO users (name, email, password)
-VALUES ('Katie Herda', 'katie@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'),
-('Artur Kurylowicz', 'artur@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'),
-('Debbie Oh', 'debbie@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u'),
-('Colin Miazga', 'colin@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u');
+VALUES ('Katie Herda', 'katie@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Artur Kurylowicz', 'artur@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Debbie Oh', 'debbie@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'),
+('Colin Miazga', 'colin@mail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
 
 INSERT INTO properties (owner_id, title, description, thumbnail_photo_url, cover_photo_url, cost_per_night, parking_spaces, number_of_bathrooms, number_of_bedrooms, country, street, city, province, post_code)
 VALUES (1, 'Dope Castle', 'description', 'https://images.pexels.com/photos/7962980/pexels-photo-7962980.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', 'https://www.pexels.com/photo/gothic-majestic-castle-under-cloudy-sky-5273517/', 10000, 80, 25, 37, 'Canada', 'Castle St', 'St. Johns', 'Newfoundland', 'A2N 4B6'),
